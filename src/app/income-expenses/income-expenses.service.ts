@@ -35,7 +35,6 @@ export class IncomeExpensesService {
       .pipe(
         map(docData => {
           return docData.map(doc => {
-            console.log(doc);
             return {
               ...doc.payload.doc.data(),
               uid: doc.payload.doc.id
@@ -70,5 +69,9 @@ export class IncomeExpensesService {
         console.log(error);
         Swal.fire("Data couldn't be saved", error.message, "error");
       });
+  }
+  deleteItem(uid: string) {
+    const user = this.authService.getUser();
+    return this.afDB.doc(`${user.uid}/income-expenses/items/${uid}`).delete();
   }
 }

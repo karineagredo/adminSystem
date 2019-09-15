@@ -21,6 +21,7 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { StoreModule } from "@ngrx/store";
 import { appReducers } from "./app.reducer";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { IncomeExpensesPipe } from './income-expenses/income-expenses.pipe';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { StoreDevtoolsModule } from "@ngrx/store-devtools";
     DetailsComponent,
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    IncomeExpensesPipe
   ],
   imports: [
     BrowserModule,
